@@ -1,14 +1,9 @@
 ---
 layout: default
-title: "GLOBAL POST-PANDEMIC REALITY"
+title: "GLOBAL POST-PANDEMIC REALITY : HEALTH SYSTEMS STILL LACK SANITATION"
 ---
 
-GLOBAL POST-PANDEMIC REALITY : HEALTH SYSTEMS STILL LACK SANITATION
-
-Building resilience from the inside out: WASH in health-care systems
-
-2 BILLION PEOPLE
-rely on healthcare facilities that lack basic water services
+2 BILLION PEOPLE still rely on healthcare facilities that lack basic water services
 
 Meaning that 
 - Spread of preventable diseases and heightened risk of infection
