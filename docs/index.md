@@ -14,7 +14,8 @@ Building resilience from the inside out: WASH in health-care systems
 First, a look on the global situation : 
 HOW MUCH DO COUNTRIES INVEST IN HEALTH ?
 
-Interactive version: [Open map →](html/plot2_world.html)
+Interactive version: Interactive version: [Open map →]({{ site.baseurl }}/html/plot2_world.html)
+
 
 ![Government Health Expenditure (% GDP) by country](img/plot2_world.png)
 
