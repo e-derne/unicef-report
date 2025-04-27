@@ -35,6 +35,9 @@ limits.
 Here are the 12 countries where health facilities are facing the most severe crisis: up to 40% of centers lack sanitation services. This makes basic care unsafe, especially for mothers, newborns, and the elderly.
 These findings highlight the urgent need for investment in WASH (water, sanitation, hygiene) infrastructure in healthcare systems and especially in burning zones as Africa and South-East Asia.
 
+![Top 12 countries – Proportion of health care facilities with no sanitation service](img/top12_nosanitation.png)
+
+
 Behind the numbers, real lives at stake.
 In these under-equipped health centers, women give birth without clean water and wounds are treated without soap but this is not just a hygiene issue. It's a daily threat to life, dignity, and care quality that the population of these countries are enduring.
 
@@ -47,6 +50,12 @@ Countries with poor healthcare sanitation tend to show significantly lower life 
 This decline reflects deeper issues: higher infant and maternal mortality, poor disease control, and limited access to quality care : the actual symptoms of a systemic problem.
 
 **NEXT STEPS ?** Building resilience from the inside out
+
+![Global sanitation coverage trend (2000–2023)](img/global_sanitation_trend.png)
+
+**Average % of facilities without sanitation service**  
+
+If there is no real action implemented, the raise will keep on increasing through time.
 Emergency aid is no longer enough. What vulnerable countries need is not just donations—but long-term, structural
 partnerships.
 NGOs and local governments must co-design sustainable WASH (Water, Sanitation, Hygiene) infrastructures, train
