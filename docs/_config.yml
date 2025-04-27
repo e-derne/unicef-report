@@ -1,0 +1,4 @@
+title: "UNICEF WASH Report"
+remote_theme: pages-themes/cayman@v0.2.0  # un thème sobre avec nav
+plugins:
+  - jekyll-remote-theme
