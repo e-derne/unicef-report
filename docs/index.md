@@ -1,7 +1,3 @@
----
-layout: default
-title: "GLOBAL POST-PANDEMIC REALITY : HEALTH SYSTEMS STILL LACK SANITATION"
----
 
 # Building resilience from the inside out: WASH in health-care systems
 
