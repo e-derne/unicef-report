@@ -11,9 +11,8 @@ title: "GLOBAL POST-PANDEMIC REALITY : HEALTH SYSTEMS STILL LACK SANITATION"
 - Lower life expectancy at birth
 
 First, a look on the global situation : 
-HOW MUCH DO COUNTRIES INVEST IN HEALTH ?
+**HOW MUCH DO COUNTRIES INVEST IN HEALTH ?**
 
-To see the interactive version: [Open map →]({{ site.baseurl }}/html/plot2_world.html)
 
 
 ![Government Health Expenditure (% GDP) by country](img/plot2_world.png)
