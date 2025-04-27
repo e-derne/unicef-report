@@ -15,6 +15,13 @@ Interactive version: [Open map →](html/plot3_world.ht ml)
 
 ![Government Health Expenditure (% GDP) by country](img/plot3_world.p ng)
 
+<iframe 
+  src="html/plot2_world.html" 
+  width="900" 
+  height="500" 
+  style="border:none;">
+</iframe>
+
 COVID-19 was a wake-up call.
 The pandemic put the spotlight back on health care importance and exposed how fragile even the strongest health systems can be. Around the world, underinvestment and poor infrastructure pushed hospitals to their limits.
 But funding is only part of the story.
