@@ -138,7 +138,7 @@ p.save(f'docs/img/{output_path}', width=12, height=6, dpi=200)
 **WHAT IS AT STAKE FOR HUMAN HEALTH?**
 
 ![Life Expectancy vs Healthcare Sanitation Access](img/ScatterPlotExpectancy.png)
-To see the interactive version: [Open map →]({{ site.baseurl }}/html/life_expectancy_vs_sanitation.html)
+
 
 <details>
 <summary>See the code V</summary>
