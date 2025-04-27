@@ -162,7 +162,6 @@ mask = (
 )
 sub = df.loc[mask, ['time_period', 'obs_value']].copy()
 
-
 sub['year'] = pd.to_numeric(sub['time_period'], errors='coerce')
 trend = (
     sub.dropna(subset=['year'])
@@ -176,7 +175,8 @@ fig, ax = plt.subplots(figsize=(10, 6))
 ax.plot(trend['year'], trend['obs_value'], marker='o', linewidth=2, label='% global without sanitation')
 ax.set_xlim(2000, trend['year'].max())
 ax.set_ylim(0, trend['obs_value'].max() * 1.1)
-ax.set_title("Global trend of health facilities without sanitation (2000–2023)", fontsize=14, fontweight='bold', pad=12)
+ax.set_title("Global trend of health facilities without sanitation (2000–2023)", 
+             fontsize=14, fontweight='bold', pad=12)
 ax.set_xlabel("Year", fontsize=12)
 ax.set_ylabel("Average % without sanitation", fontsize=12)
 ax.grid(axis='y', linestyle='--', alpha=0.5)
