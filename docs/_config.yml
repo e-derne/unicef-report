@@ -2,15 +2,3 @@ title: "UNICEF WASH Report"
 remote_theme: pages-themes/cayman@v0.2.0  # un thème sobre avec nav
 plugins:
   - jekyll-remote-theme
-
-nav:
-  - text: "Home"
-    url: /
-  - text: "HOW MUCH DO COUNTRIES INVEST IN HEALTH ?"
-    url: /health-gdp/
-  - text: "THE WASH EMERGENCY"
-    url: /scatter/
-  - text: "INCREASING PROBLEM"
-    url: /linechart/
-  - text: "Next Steps"
-    url: /next-steps/
