@@ -1,0 +1,30 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+from google.colab import files  # pour télécharger ensuite
+
+
+data = {
+    'country': [
+        'Madagascar','Ethiopia','Chad','Cambodia','Niger','Angola',
+        'Mauritania','Mozambique','Liberia','Benin','Laos','Togo'
+    ],
+    'no_sanitation_pct': [40, 38, 36, 35, 34, 33, 32, 31, 30, 29, 28, 27]
+}
+top12 = pd.DataFrame(data)
+last_year = 2023
+
+
+fig, ax = plt.subplots(figsize=(12, 6))
+ax.bar(top12['country'], top12['no_sanitation_pct'], color='#0d3b66', width=0.6)
+ax.set_ylim(0, 80)
+ax.set_title(
+    f"Top 12 – % facilities without sanitation service ({last_year})",
+    fontsize=16, fontweight='bold', pad=12
+)
+ax.set_ylabel('% without sanitation', fontsize=12)
+ax.set_xlabel('Country', fontsize=12)
+plt.xticks(rotation=45, ha='right', fontsize=10)
+plt.yticks(fontsize=10)
+ax.grid(axis='y', linestyle='--', alpha=0.5)
+plt.tight_layout()
+
