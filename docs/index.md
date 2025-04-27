@@ -3,8 +3,16 @@ layout: default
 title: "GLOBAL POST-PANDEMIC REALITY : HEALTH SYSTEMS STILL LACK SANITATION"
 ---
 
- 
-###Building resilience from the inside out: WASH in health-care systems
+---
+layout: default
+---
+
+<style>
+  body { font-family: "Open Sans", montserrat; }
+  h1 { color: #1a5a96; }
+</style>
+
+# Building resilience from the inside out: WASH in health-care systems
 
 **2 BILLION PEOPLE** rely on healthcare facilities that lack basic water services. **Meaning that** :
 - Spread of preventable diseases and heightened risk of infection  
