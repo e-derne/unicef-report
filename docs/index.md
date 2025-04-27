@@ -20,63 +20,50 @@ To see the interactive version: [Open map →]({{ site.baseurl }}/html/plot2_wor
 
 
 <details>
-<summary>See the code</summary>
+<summary>See the code V </summary>
 
 ```python
 import pandas as pd
 import plotly.express as px
 
-
-he = pd.read_csv("B9C6C79_ALL_LATEST.csv", sep=";", encoding="utf-8-sig", engine="python")
-
-
+he = pd.read_csv("89C6C79_ALL_LATEST.csv", sep=";", encoding="utf-8-sig", engine="python")
 latest = he["DIM_TIME"].max()
 df = he[he["DIM_TIME"] == latest]
 
 fig = px.choropleth(
     df,
-    locations         = "GEO_NAME_SHORT",
-    locationmode      = "country names",
-    color             = "RATE_PER_100_N",
-    hover_name        = "GEO_NAME_SHORT",
-    hover_data        = {"DIM_TIME": True},      # year goes into customdata
-    color_continuous_scale = px.colors.sequential.Blues,
-    title             = f"Government Health Expenditure (% of GDP) — {latest}",
-    labels = {
+    locations="GEO_NAME_SHORT",
+    locationmode="country names",
+    color="RATE_PER_100_N",
+    hover_name="GEO_NAME_SHORT",
+    hover_data={"DIM_TIME": True},
+    color_continuous_scale=px.colors.sequential.Blues,
+    title="Government Health Expenditure (% of GDP) — " + str(latest),
+    labels={
         "RATE_PER_100_N": "Health exp. (% GDP)",
-        "DIM_TIME":       "Year"
+        "DIM_TIME": "Year"
     },
-    width  = 900,
-    height = 500
+    width=900,
+    height=500
 )
 
 fig.update_traces(
-    hovertemplate=(
-        "In %{customdata[0]}, "             # year
-        "%{location} allocates "
-        "<b>%{z:.1f}%</b> of its GDP<br>"    # z is the color value
-        "to health expenditure."
-        "<extra></extra>"                   # drop the little secondary box
-    )
+    hovertemplate="In %{customdata[0]}, %{location} allocates %{z:.1f}% of its GDP to health expenditure."
 )
 
-
 fig.update_layout(
-    margin = dict(l=0, r=0, t=50, b=0),
-    title_x = 0.02,
-    geo = dict(showframe=False, showcoastlines=True),
-    coloraxis_colorbar = dict(
-        title = "Health exp. (% GDP)",
-        ticks = "outside",
-        tickformat = ".1f"
+    margin=dict(l=0, r=0, t=50, b=0),
+    title_x=0.02,
+    geo=dict(showframe=False, showcoastlines=True),
+    coloraxis_colorbar=dict(
+        title="Health exp. (% GDP)",
+        ticks="outside",
+        tickformat=".1f"
     )
 )
 
 fig.show()
-
-p.save("docs/img/plot2_world.png", dpi=300, width=12, height=6)
-
-p
+fig.write_image("docs/img/plot2_world.png", scale=3, width=900, height=500)
 ```
 </details>
 
