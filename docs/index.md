@@ -18,16 +18,8 @@ To see the interactive version: [Open map →]({{ site.baseurl }}/html/plot2_wor
 
 ![Government Health Expenditure (% GDP) by country](img/plot2_world.png)
 
-```html
-<!-- Extrait de docs/html/plot2_world.html -->
-<div id="plotly-div">…</div>
-<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-<script>
-  var data = …;
-  Plotly.newPlot('plotly-div', data, layout);
-</script>
-```
-Pour consulter le code complet > [html/plot2_world_code.html](html/plot2_world_code.html) sur GitHub.
+
+To see the code > [html/plot2_world_code.html](html/plot2_world_code.html) sur GitHub.
 
 This map shows the proportion of the GPD allocated to health expenditures and highlights the most deprived areas . Yet, behind the numbers hides a deeper crisis — one that begins with **HYGENE**.
 
