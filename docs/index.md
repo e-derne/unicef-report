@@ -84,7 +84,7 @@ These findings highlight the urgent need for investment in WASH (water, sanitati
 ![Top 12 countries – Proportion of health care facilities with no sanitation service](img/top12_nosanitation.png)
 
 <details>
-<summary>See the code</summary>
+<summary>See the code V </summary>
 
 ```python
 from plotnine import (
@@ -142,7 +142,7 @@ p.save(f'docs/img/{output_path}', width=12, height=6, dpi=200)
 To see the interactive version: [Open map →]({{ site.baseurl }}/html/life_expectancy_vs_sanitation.html)
 
 <details>
-<summary><strong>📋 See the analysis code</strong></summary>
+<summary>See the code V</strong></summary>
 
 ```python
 import pandas as pd
@@ -306,7 +306,7 @@ This decline reflects deeper issues: higher infant and maternal mortality, poor 
 **Average % of facilities without sanitation service**  
 
 <details>
-<summary>See the code</summary>
+<summary>See the code V</summary>
 
 ```python
 import pandas as pd
