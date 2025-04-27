@@ -13,6 +13,17 @@ Building resilience from the inside out: WASH in health-care systems
 - Increased maternal and newborn mortality  
 - Lower life expectancy at birth
 
+**Interactive version** : [Open map →](/plot2_world.html)
+
+![Government Health Expenditure (% GDP) by country](/img/plot2_world.png)
+
+
+<iframe src="/plot2_world.html"
+        width="900" height="500"
+        style="border: none;">
+</iframe>
+
+
 ---
 
 Interactive version: [Open map →](html/plot2_world.html)
