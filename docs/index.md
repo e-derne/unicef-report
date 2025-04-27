@@ -27,7 +27,7 @@ To see the interactive version: [Open map →]({{ site.baseurl }}/html/plot2_wor
   Plotly.newPlot('plotly-div', data, layout);
 </script>
 ```
-Pour consulter le code complet > [{{ site.baseurl }}/html/plot2_world_code.html]({{ site.baseurl }}/html/plot2_world_code.html) sur GitHub.
+Pour consulter le code complet > [html/plot2_world_code.html](html/plot2_world_code.html) sur GitHub.
 
 This map shows the proportion of the GPD allocated to health expenditures and highlights the most deprived areas . Yet, behind the numbers hides a deeper crisis — one that begins with **HYGENE**.
 
