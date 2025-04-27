@@ -3,14 +3,6 @@ layout: default
 title: "GLOBAL POST-PANDEMIC REALITY : HEALTH SYSTEMS STILL LACK SANITATION"
 ---
 
----
-layout: default
----
-
-<style>
-  body { font-family: "Open Sans", montserrat; }
-  h1 { color: #1a5a96; }
-</style>
 
 # Building resilience from the inside out: WASH in health-care systems
 
