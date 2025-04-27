@@ -1,14 +1,13 @@
 import pandas as pd
 import plotly.express as px
 
-# 1) Load the data
+
 he = pd.read_csv("B9C6C79_ALL_LATEST.csv", sep=";", encoding="utf-8-sig", engine="python")
 
-# 2) Keep only the latest year
+
 latest = he["DIM_TIME"].max()
 df = he[he["DIM_TIME"] == latest]
 
-# 3) Build your choropleth but tell Plotly to stash the year in customdata
 fig = px.choropleth(
     df,
     locations         = "GEO_NAME_SHORT",
@@ -26,7 +25,6 @@ fig = px.choropleth(
     height = 500
 )
 
-# 4) Replace the default hover with your own sentence
 fig.update_traces(
     hovertemplate=(
         "In %{customdata[0]}, "             # year
@@ -37,7 +35,7 @@ fig.update_traces(
     )
 )
 
-# 5) Polish the layout
+
 fig.update_layout(
     margin = dict(l=0, r=0, t=50, b=0),
     title_x = 0.02,
