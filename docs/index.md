@@ -86,33 +86,4 @@ p = (
 
 output_path = 'top12_nosanitation.png'
 p.save(f'docs/img/{output_path}', width=12, height=6, dpi=200)
-</details> ```
-
-
-Behind the numbers, real lives at stake.
-In these under-equipped health centers, women give birth without clean water and wounds are treated without soap but this is not just a hygiene issue. It's a daily threat to life, dignity, and care quality that the population of these countries are enduring.
-
-*BUT THEN...*
-**WHAT IS AT STAKE FOR HUMAN HEALTH?**
-
-Life expectancy is one of the most telling indicators of a population’s overall well-being. Thanks to this graph, we clearly see that poor sanitation in healthcare facility directly influences the longevity of a population.
-Countries with poor healthcare sanitation tend to show significantly lower life expectancy rates.
-
-This decline reflects deeper issues: higher infant and maternal mortality, poor disease control, and limited access to quality care : the actual symptoms of a systemic problem.
-
-**NEXT STEPS ?** Building resilience from the inside out
-
-![Global sanitation coverage trend (2000–2023)](img/global_sanitation_trend.png)
-
-**Average % of facilities without sanitation service**  
-
-If there is no real action implemented, the raise will keep on increasing through time.
-Emergency aid is no longer enough. What vulnerable countries need is not just donations—but long-term, structural
-partnerships.
-NGOs and local governments must co-design sustainable WASH (Water, Sanitation, Hygiene) infrastructures, train
-local health workers, and ensure knowledge transfer.
-Empowerment, not dependence, is key: let’s move from charity to capacity-building.Investing in resilient health systems is investing in human dignity, global stability, and future pandemics prevention.
-
-
-CURRENT SITUATION - The US President Donald Trump recently voted the cut of American support to major global health NGOs.
-For example : USAID ~ up to $65 Bn in 2023.
+<details/>
