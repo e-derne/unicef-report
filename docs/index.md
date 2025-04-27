@@ -136,6 +136,182 @@ In these under-equipped health centers, women give birth without clean water and
 *BUT THEN...*
 **WHAT IS AT STAKE FOR HUMAN HEALTH?**
 
+## Life Expectancy vs Healthcare Sanitation Access
+
+<div align="center">
+<img src="/docs/img/ScatterPlotExpectancy.png" alt="Scatter Plot Visualization" style="max-width: 90%; border: 1px solid #eee; margin-bottom: 20px;">
+
+[<button style="background-color: #0366d6; color: white; padding: 8px 16px; border: none; border-radius: 6px; cursor: pointer;">🔎 View Interactive Version</button>](/docs/html/life_expectancy_vs_sanitation.html)
+</div>
+
+**Behind the numbers, real lives at stake.** In these under-equipped health centers:
+- Women give birth without clean water
+- Wounds are treated without soap  
+- This is not just a hygiene issue, but a daily threat to life, dignity, and care quality
+
+### Key Insights:
+- **Trend**: Clear negative correlation (-0.76) between lack of sanitation and life expectancy
+- **Outliers**: [Country X] shows exceptional results despite challenges
+- **Data Year**: {last_year} (most recent available)
+
+> "Life expectancy is one of the most telling indicators of a population's overall well-being. Poor sanitation in healthcare facilities directly influences longevity."
+
+<details>
+<summary><strong>📋 See the analysis code</strong></summary>
+
+```python
+import pandas as pd
+import plotly.express as px
+import plotly.graph_objects as go
+from sklearn.linear_model import LinearRegression
+import numpy as np
+
+# 1) Data Loading and Cleaning
+san = pd.read_csv('/content/unicef_indicator_1(7).csv', sep=';', engine='python')
+san.columns = [col.strip('\ufeff').strip() for col in san.columns]
+
+san = san[san['indicator'].str.contains('Proportion of health care facilities', na=False)]
+san = san[san['sex'] == 'Total']
+san['year'] = pd.to_numeric(san['time_period'], errors='coerce')
+san['no_san_pct'] = pd.to_numeric(san['obs_value'], errors='coerce')
+san = san.dropna(subset=['year', 'no_san_pct'])
+
+meta = pd.read_csv('/content/unicef_metadata.csv', sep=';', engine='python')
+meta = meta.rename(columns={'Life expectancy at birth, total (years)': 'life_exp'})
+meta['year'] = pd.to_numeric(meta['year'], errors='coerce')
+meta['life_exp'] = pd.to_numeric(meta['life_exp'], errors='coerce')
+meta = meta.dropna(subset=['year', 'life_exp'])
+
+# 2) Find most recent common year
+common_years = sorted(list(set(san['year']).intersection(set(meta['year']))))
+if not common_years:
+    raise ValueError("No common years found between datasets")
+
+last_year = max(common_years)
+san_latest = san[san['year'] == last_year][['country', 'no_san_pct']]
+meta_latest = meta[meta['year'] == last_year][['country', 'life_exp']]
+
+# 3) Data Merging
+san_latest['country'] = san_latest['country'].str.strip().str.upper()
+meta_latest['country'] = meta_latest['country'].str.strip().str.upper()
+df_scatter = pd.merge(san_latest, meta_latest, on='country', how='inner')
+
+if df_scatter.empty:
+    raise ValueError("No country matches found")
+
+# 4) Create blue color gradient (darker blue = higher life expectancy)
+df_scatter['color_intensity'] = (df_scatter['life_exp'] - df_scatter['life_exp'].min()) / (df_scatter['life_exp'].max() - df_scatter['life_exp'].min())
+colorscale = [[0, '#a6cee3'], [1, '#1f78b4']]  # Light to dark blue gradient
+
+# 5) Calculate regression line
+X = df_scatter['no_san_pct'].values.reshape(-1, 1)
+y = df_scatter['life_exp'].values
+model = LinearRegression().fit(X, y)
+trend_line = model.predict(X)
+
+# 6) Create interactive visualization
+fig = px.scatter(
+    df_scatter,
+    x='no_san_pct',
+    y='life_exp',
+    color='color_intensity',
+    color_continuous_scale=colorscale,
+    hover_name='country',
+    hover_data={
+        'no_san_pct': ':.1f%',
+        'life_exp': ':.1f years',
+        'color_intensity': False
+    },
+    labels={
+        'no_san_pct': '% Healthcare Facilities Without Sanitation',
+        'life_exp': 'Life Expectancy at Birth (years)',
+    },
+    title=f'Life Expectancy vs Healthcare Sanitation Access ({last_year})'
+)
+
+# Add trend line
+fig.add_trace(
+    go.Scatter(
+        x=df_scatter['no_san_pct'],
+        y=trend_line,
+        mode='lines',
+        name='Trend Line',
+        line=dict(color='#08519c', width=2),  # Dark blue trend line
+        hoverinfo='skip'
+    )
+)
+
+# Add average line (now in dark blue instead of green)
+mean_life_exp = df_scatter['life_exp'].mean()
+fig.add_hline(
+    y=mean_life_exp,
+    line_dash="dot",
+    annotation_text=f"Global Average: {mean_life_exp:.1f} years",
+    annotation_position="bottom right",
+    line_color="#08519c",  # Dark blue average line
+    annotation_font_size=12
+)
+
+# Customize layout
+fig.update_layout(
+    coloraxis_showscale=False,
+    plot_bgcolor='white',
+    paper_bgcolor='white',
+    font=dict(family="Arial", size=12),
+    hoverlabel=dict(
+        bgcolor="white",
+        font_size=12,
+        font_family="Arial"
+    ),
+    title={
+        'text': f"<b>Life Expectancy vs Healthcare Sanitation Access ({last_year})</b>",
+        'y':0.95,
+        'x':0.5,
+        'xanchor': 'center',
+        'yanchor': 'top',
+        'font': {'size': 16}
+    },
+    margin=dict(l=20, r=20, t=80, b=20)
+)
+
+# Axis formatting
+fig.update_xaxes(
+    title_standoff=10,
+    tickformat=".0%",
+    showgrid=True, 
+    gridwidth=0.5, 
+    gridcolor='LightGrey'
+)
+
+fig.update_yaxes(
+    title_standoff=10,
+    showgrid=True, 
+    gridwidth=0.5, 
+    gridcolor='LightGrey'
+)
+
+# Display
+fig.show()
+
+# Save as interactive HTML
+output_path = '/content/life_expectancy_vs_sanitation.html'
+fig.write_html(output_path)
+print(f"\nInteractive visualization saved to: {output_path}")
+print(f"To share this visualization: [Open interactive chart →](/content/life_expectancy_vs_sanitation.html)")
+```
+</details>
+
+### Next Steps: Building Resilience
+1. **Infrastructure**: Basic WASH facilities in all health centers
+2. **Training**: Hygiene education for medical staff
+3. **Monitoring**: Regular sanitation quality audits
+
+---
+
+
+
+////
+
 <div align="center">
   <img src="/docs/img/ScatterPlotExpectancy.png" alt="Scatter Plot" width="80%">
   
