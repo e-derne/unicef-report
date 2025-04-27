@@ -43,7 +43,7 @@ These findings highlight the urgent need for investment in WASH (water, sanitati
 
 
 <details>
-<summary>▶ Voir le code Python</summary>
+ <summary>See the code</summary>
 
 ```python
 from plotnine import (
@@ -85,8 +85,8 @@ p = (
 )
 
 output_path = 'top12_nosanitation.png'
-p.save(f'docs/img/{output_path}', width=12, height=6, dpi=200)```
-
+p.save(f'docs/img/{output_path}', width=12, height=6, dpi=200)
+</details> ```
 
 
 Behind the numbers, real lives at stake.
