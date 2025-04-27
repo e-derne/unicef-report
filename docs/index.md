@@ -96,11 +96,6 @@ These findings highlight the urgent need for investment in WASH (water, sanitati
 
 ![Top 12 countries – Proportion of health care facilities with no sanitation service](img/top12_nosanitation.png)
 
-## 5. Top 12 Countries – % Facilities without Sanitation
-
-![Top 12 countries – Proportion of health care facilities with no sanitation service](img/top12_nosanitation.png)
-
-
 <details>
 <summary>See the code</summary>
 
