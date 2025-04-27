@@ -67,7 +67,7 @@ fig.write_image("docs/img/plot2_world.png", scale=3, width=900, height=500)
 ```
 </details>
 
-This map shows the proportion of the GPD allocated to health expenditures and highlights the most deprived areas . Yet, behind the numbers hides a deeper crisis — one that begins with **HYGENE**.
+This map shows the proportion of the GPD allocated to health expenditures and highlights the most deprived areas . Yet, behind the numbers hides a deeper crisis — one that begins with **HYGIENE**.
 
 COVID-19 was a wake-up call.
 The pandemic put the spotlight back on
@@ -142,7 +142,7 @@ p.save(f'docs/img/{output_path}', width=12, height=6, dpi=200)
 To see the interactive version: [Open map →]({{ site.baseurl }}/html/life_expectancy_vs_sanitation.html)
 
 <details>
-<summary>See the code V</strong></summary>
+<summary>See the code V</summary>
 
 ```python
 import pandas as pd
