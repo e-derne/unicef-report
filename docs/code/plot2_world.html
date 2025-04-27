@@ -1,0 +1,57 @@
+import pandas as pd
+import plotly.express as px
+
+# 1) Load the data
+he = pd.read_csv("B9C6C79_ALL_LATEST.csv", sep=";", encoding="utf-8-sig", engine="python")
+
+# 2) Keep only the latest year
+latest = he["DIM_TIME"].max()
+df = he[he["DIM_TIME"] == latest]
+
+# 3) Build your choropleth but tell Plotly to stash the year in customdata
+fig = px.choropleth(
+    df,
+    locations         = "GEO_NAME_SHORT",
+    locationmode      = "country names",
+    color             = "RATE_PER_100_N",
+    hover_name        = "GEO_NAME_SHORT",
+    hover_data        = {"DIM_TIME": True},      # year goes into customdata
+    color_continuous_scale = px.colors.sequential.Blues,
+    title             = f"Government Health Expenditure (% of GDP) — {latest}",
+    labels = {
+        "RATE_PER_100_N": "Health exp. (% GDP)",
+        "DIM_TIME":       "Year"
+    },
+    width  = 900,
+    height = 500
+)
+
+# 4) Replace the default hover with your own sentence
+fig.update_traces(
+    hovertemplate=(
+        "In %{customdata[0]}, "             # year
+        "%{location} allocates "
+        "<b>%{z:.1f}%</b> of its GDP<br>"    # z is the color value
+        "to health expenditure."
+        "<extra></extra>"                   # drop the little secondary box
+    )
+)
+
+# 5) Polish the layout
+fig.update_layout(
+    margin = dict(l=0, r=0, t=50, b=0),
+    title_x = 0.02,
+    geo = dict(showframe=False, showcoastlines=True),
+    coloraxis_colorbar = dict(
+        title = "Health exp. (% GDP)",
+        ticks = "outside",
+        tickformat = ".1f"
+    )
+)
+
+fig.show()
+
+p.save("docs/img/plot2_world.png", dpi=300, width=12, height=6)
+
+# 2) (Optionnel) Affiche-le quand même
+p
