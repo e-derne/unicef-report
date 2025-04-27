@@ -130,31 +130,16 @@ p.save(f'docs/img/{output_path}', width=12, height=6, dpi=200)
 ```
 </details>
 
-Behind the numbers, real lives at stake.
-In these under-equipped health centers, women give birth without clean water and wounds are treated without soap but this is not just a hygiene issue. It's a daily threat to life, dignity, and care quality that the population of these countries are enduring.
-
-*BUT THEN...*
-**WHAT IS AT STAKE FOR HUMAN HEALTH?**
-
-## Life Expectancy vs Healthcare Sanitation Access
-
-<div align="center">
-<img src="/docs/img/ScatterPlotExpectancy.png" alt="Scatter Plot Visualization" style="max-width: 90%; border: 1px solid #eee; margin-bottom: 20px;">
-
-[<button style="background-color: #0366d6; color: white; padding: 8px 16px; border: none; border-radius: 6px; cursor: pointer;">🔎 View Interactive Version</button>](/docs/html/life_expectancy_vs_sanitation.html)
-</div>
-
 **Behind the numbers, real lives at stake.** In these under-equipped health centers:
 - Women give birth without clean water
 - Wounds are treated without soap  
 - This is not just a hygiene issue, but a daily threat to life, dignity, and care quality
 
-### Key Insights:
-- **Trend**: Clear negative correlation (-0.76) between lack of sanitation and life expectancy
-- **Outliers**: [Country X] shows exceptional results despite challenges
-- **Data Year**: {last_year} (most recent available)
+*BUT THEN...*
+**WHAT IS AT STAKE FOR HUMAN HEALTH?**
 
-> "Life expectancy is one of the most telling indicators of a population's overall well-being. Poor sanitation in healthcare facilities directly influences longevity."
+![Life Expectancy vs Healthcare Sanitation Access](img/ScatterPlotExpectancy.png)
+To see the interactive version: [Open map →]({{ site.baseurl }}/html/life_expectancy_vs_sanitation.html)
 
 <details>
 <summary><strong>📋 See the analysis code</strong></summary>
@@ -301,32 +286,18 @@ print(f"To share this visualization: [Open interactive chart →](/content/life_
 ```
 </details>
 
-### Next Steps: Building Resilience
-1. **Infrastructure**: Basic WASH facilities in all health centers
-2. **Training**: Hygiene education for medical staff
-3. **Monitoring**: Regular sanitation quality audits
-
----
 
 
+Life expectancy is one of the most telling indicators of a population’s overall well-being. Thanks to this graph, we clearly see that poor sanitation in healthcare facility directly influences the longevity of a population.
+Countries with poor healthcare sanitation tend to show significantly lower life expectancy rates.
 
-////
-
-<div align="center">
-  <img src="/docs/img/ScatterPlotExpectancy.png" alt="Scatter Plot" width="80%">
-  
-  [<kbd>🔎 View Interactive Version</kbd>](/docs/html/life_expectancy_vs_sanitation.html)
-</div>
+This decline reflects deeper issues: higher infant and maternal mortality, poor disease control, and limited access to quality care : the actual symptoms of a systemic problem.
 
 ### Key Insights:
 - **Trend**: Clear negative correlation (-0.76) between lack of sanitation and life expectancy
 - **Outliers**: [Country X] shows exceptional results despite challenges
 - **Data Year**: {last_year} (most recent available)
 
-Life expectancy is one of the most telling indicators of a population’s overall well-being. Thanks to this graph, we clearly see that poor sanitation in healthcare facility directly influences the longevity of a population.
-Countries with poor healthcare sanitation tend to show significantly lower life expectancy rates.
-
-This decline reflects deeper issues: higher infant and maternal mortality, poor disease control, and limited access to quality care : the actual symptoms of a systemic problem.
 
 **NEXT STEPS ?** Building resilience from the inside out
 
