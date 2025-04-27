@@ -136,6 +136,17 @@ In these under-equipped health centers, women give birth without clean water and
 *BUT THEN...*
 **WHAT IS AT STAKE FOR HUMAN HEALTH?**
 
+<div align="center">
+  <img src="/docs/img/ScatterPlotExpectancy.png" alt="Scatter Plot" width="80%">
+  
+  [<kbd>🔎 View Interactive Version</kbd>](/docs/html/life_expectancy_vs_sanitation.html)
+</div>
+
+### Key Insights:
+- **Trend**: Clear negative correlation (-0.76) between lack of sanitation and life expectancy
+- **Outliers**: [Country X] shows exceptional results despite challenges
+- **Data Year**: {last_year} (most recent available)
+
 Life expectancy is one of the most telling indicators of a population’s overall well-being. Thanks to this graph, we clearly see that poor sanitation in healthcare facility directly influences the longevity of a population.
 Countries with poor healthcare sanitation tend to show significantly lower life expectancy rates.
 
